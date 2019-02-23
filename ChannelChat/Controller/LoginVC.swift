@@ -1,24 +1,23 @@
 //
-//  ChannelVC.swift
+//  LoginVCViewController.swift
 //  ChannelChat
 //
-//  Created by Johny Babylon on 2/17/19.
+//  Created by Johny Babylon on 2/23/19.
 //  Copyright © 2019 Agile Associates. All rights reserved.
 //
 
 import UIKit
 
-class ChannelVC: UIViewController {
+class LoginVC: UIViewController {
 
-    @IBOutlet weak var loginBtn: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 80
+
+        // Do any additional setup after loading the view.
     }
     
-    @IBAction func loginBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+    @IBAction func closePressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     /*
