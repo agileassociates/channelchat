@@ -10,10 +10,13 @@ import UIKit
 
 class CreateAccountVC: UIViewController {
 
-    @IBOutlet weak var usernameTxt: UIStackView!
+    @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var userImage: UIImageView!
+    
+    var avatarName = "profileDefault"
+    var avatarColor = "[0.5, 0.5, 0.5, 1]"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +29,9 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func createAcctBtnPressed(_ sender: Any) {
-        guard let email = emailTxt.text , emailTxt.text != "" else { return
-            
-        }
+        
+        guard let name = usernameTxt.text , usernameTxt.text != "" else { return }
+        guard let email = emailTxt.text , emailTxt.text != "" else { return }
         guard let password = passwordTxt.text , passwordTxt.text != "" else {return}
         
         AuthService.instance.registeredUser(email: email, password: password)
@@ -37,9 +40,16 @@ class CreateAccountVC: UIViewController {
                 AuthService.instance.loginUser(email: email, password: password, completion:
                     { (success) in
                         if success {
-                            print("logged in user", AuthService.instance.authToken)
+                            AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion:
+                                { (success) in
+                                    if success {
+                                        print("name: " + UserDataService.instance.name,
+                                              "avatar_name: " + UserDataService.instance.avatarName)
+                                        self.performSegue(withIdentifier: UNWIND, sender: nil)
+                                    }
+                                    
+                            })
                         }
-                    
                     
                 })
             }
