@@ -12,6 +12,7 @@
 		F49FFDD9221A6D9F0040BA9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49FFDD7221A6D9F0040BA9A /* Main.storyboard */; };
 		F49FFDDB221A6DA00040BA9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49FFDDA221A6DA00040BA9A /* Assets.xcassets */; };
 		F49FFDDE221A6DA00040BA9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49FFDDC221A6DA00040BA9A /* LaunchScreen.storyboard */; };
+		F4A954532223A8200058240B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A954522223A8200058240B /* AuthService.swift */; };
 		F4B76ABA221A810800EE5500 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B76AB9221A810800EE5500 /* SWRevealViewController.m */; };
 		F4B76ABF221A893100EE5500 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B76ABE221A893100EE5500 /* ChatVC.swift */; };
 		F4B76AC1221A894A00EE5500 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B76AC0221A894A00EE5500 /* ChannelVC.swift */; };
@@ -31,6 +32,7 @@
 		F49FFDDA221A6DA00040BA9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F49FFDDD221A6DA00040BA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F49FFDDF221A6DA00040BA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A954522223A8200058240B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F4B76AB6221A810600EE5500 /* ChannelChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChannelChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4B76AB8221A810700EE5500 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F4B76AB9221A810800EE5500 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -74,6 +76,8 @@
 		F49FFDC7221A6D9F0040BA9A = {
 			isa = PBXGroup;
 			children = (
+				F4A954512223A8010058240B /* Services */,
+				F4A954502223A7F90058240B /* New Group */,
 				F49FFDD2221A6D9F0040BA9A /* ChannelChat */,
 				F4B76AB1221A807800EE5500 /* Supporting Files */,
 				F49FFDD1221A6D9F0040BA9A /* Products */,
@@ -104,6 +108,21 @@
 				F49FFDDF221A6DA00040BA9A /* Info.plist */,
 			);
 			path = ChannelChat;
+			sourceTree = "<group>";
+		};
+		F4A954502223A7F90058240B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F4A954512223A8010058240B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F4A954522223A8200058240B /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F4B76AB1221A807800EE5500 /* Supporting Files */ = {
@@ -272,6 +291,7 @@
 				F4B76AC1221A894A00EE5500 /* ChannelVC.swift in Sources */,
 				F4B76ABF221A893100EE5500 /* ChatVC.swift in Sources */,
 				F4E8EAD82221F32400C33923 /* CreateAccountVC.swift in Sources */,
+				F4A954532223A8200058240B /* AuthService.swift in Sources */,
 				F4B76AC3221A99DD00EE5500 /* GradientView.swift in Sources */,
 				F49FFDD4221A6D9F0040BA9A /* AppDelegate.swift in Sources */,
 				F4B76ABA221A810800EE5500 /* SWRevealViewController.m in Sources */,
