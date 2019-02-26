@@ -28,6 +28,11 @@ class CreateAccountVC: UIViewController {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
     
+    @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
+    }
+    
+    
     @IBAction func createAcctBtnPressed(_ sender: Any) {
         
         guard let name = usernameTxt.text , usernameTxt.text != "" else { return }
@@ -47,13 +52,12 @@ class CreateAccountVC: UIViewController {
                                               "avatar_name: " + UserDataService.instance.avatarName)
                                         self.performSegue(withIdentifier: UNWIND, sender: nil)
                                     }
-                                    
                             })
                         }
-                    
                 })
             }
         }
-        
     }
+    
+    
 }

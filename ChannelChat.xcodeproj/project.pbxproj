@@ -10,6 +10,7 @@
 		59C74723CF78181DB00BE982 /* Pods_ChannelChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4607D86782E0160702266531 /* Pods_ChannelChat.framework */; };
 		F416AD1F2223C51E00AA1899 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AD1E2223C51E00AA1899 /* RoundedButton.swift */; };
 		F41D53FC22249757001090C4 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D53FB22249757001090C4 /* UserDataService.swift */; };
+		F41D53FE2224B1A7001090C4 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D53FD2224B1A7001090C4 /* AvatarVC.swift */; };
 		F49FFDD4221A6D9F0040BA9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FFDD3221A6D9F0040BA9A /* AppDelegate.swift */; };
 		F49FFDD9221A6D9F0040BA9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49FFDD7221A6D9F0040BA9A /* Main.storyboard */; };
 		F49FFDDB221A6DA00040BA9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49FFDDA221A6DA00040BA9A /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		CC1D45DED879928EC3D86F7D /* Pods-ChannelChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelChat/Pods-ChannelChat.debug.xcconfig"; sourceTree = "<group>"; };
 		F416AD1E2223C51E00AA1899 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F41D53FB22249757001090C4 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		F41D53FD2224B1A7001090C4 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
 		F49FFDD0221A6D9F0040BA9A /* ChannelChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChannelChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49FFDD3221A6D9F0040BA9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49FFDD8221A6D9F0040BA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				F4B76AC0221A894A00EE5500 /* ChannelVC.swift */,
 				F4B76AC72221ED9400EE5500 /* LoginVC.swift */,
 				F4E8EAD72221F32400C33923 /* CreateAccountVC.swift */,
+				F41D53FD2224B1A7001090C4 /* AvatarVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4B76AC1221A894A00EE5500 /* ChannelVC.swift in Sources */,
+				F41D53FE2224B1A7001090C4 /* AvatarVC.swift in Sources */,
 				F416AD1F2223C51E00AA1899 /* RoundedButton.swift in Sources */,
 				F4B76ABF221A893100EE5500 /* ChatVC.swift in Sources */,
 				F4E8EAD82221F32400C33923 /* CreateAccountVC.swift in Sources */,
