@@ -505,7 +505,7 @@
                                     <action selector="segmentCtrlChanged:" destination="rF9-KR-TPO" eventType="valueChanged" id="T9z-QC-mff"/>
                                 </connections>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ua-Md-PHM">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ua-Md-PHM">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hWX-ws-V97">
@@ -515,7 +515,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LQW-El-0cS">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="avatarCell" id="LQW-El-0cS" customClass="AvatarCell" customModule="ChannelChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -533,6 +533,9 @@
                                             <constraint firstAttribute="bottom" secondItem="zdp-Wm-e3W" secondAttribute="bottom" constant="10" id="c3m-iq-zfo"/>
                                             <constraint firstItem="zdp-Wm-e3W" firstAttribute="top" secondItem="LQW-El-0cS" secondAttribute="top" constant="10" id="pfG-Gd-xT8"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="avatarImage" destination="zdp-Wm-e3W" id="Ex9-0A-HcM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -553,6 +556,7 @@
                     <connections>
                         <outlet property="collectionView" destination="2ua-Md-PHM" id="XBO-Mh-VjD"/>
                         <outlet property="segmentControl" destination="56G-ky-IQx" id="Ibm-FN-9B4"/>
+                        <outlet property="view" destination="V14-mp-grp" id="3UO-Uf-Cek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwX-Lc-aOz" userLabel="First Responder" sceneMemberID="firstResponder"/>

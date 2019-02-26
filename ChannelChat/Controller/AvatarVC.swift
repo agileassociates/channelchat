@@ -18,6 +18,8 @@ class AvatarVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         // Do any additional setup after loading the view.
     }
@@ -31,15 +33,18 @@ class AvatarVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 28
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 28   
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "avatarCell", for: indexPath) as? AvatarCell {
+            return cell
+        }
+        return AvatarCell()
     }
     
 }
