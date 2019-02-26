@@ -416,11 +416,19 @@
                                     <action selector="createAcctBtnPressed:" destination="mMd-xG-OeH" eventType="touchUpInside" id="aJo-5O-O15"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XL-Fg-hF8" customClass="RoundedButton" customModule="ChannelChat" customModuleProvider="target">
-                                <rect key="frame" x="154.5" y="579" width="105" height="27"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLL-Eg-1CI">
+                                <rect key="frame" x="144.5" y="424" width="125" height="125"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="mvB-Mm-syL"/>
+                                    <constraint firstAttribute="width" constant="125" id="wrB-dk-SVs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XL-Fg-hF8" customClass="RoundedButton" customModule="ChannelChat" customModuleProvider="target">
+                                <rect key="frame" x="139" y="578" width="137" height="27"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="! pick your avatar !">
+                                <state key="normal" title="pick your avatar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -432,28 +440,17 @@
                                     <action selector="pickAvatarPressed:" destination="mMd-xG-OeH" eventType="touchUpInside" id="Vs0-jB-Wzi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHc-Vl-97L">
-                                <rect key="frame" x="137" y="418" width="140" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="0Xs-Pm-X5W"/>
-                                    <constraint firstAttribute="height" constant="140" id="uIh-d4-ERc"/>
-                                </constraints>
-                                <state key="normal" image="dark1"/>
-                                <connections>
-                                    <action selector="pickAvatarPressed:" destination="mMd-xG-OeH" eventType="touchUpInside" id="7Wa-zy-PFx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hLL-Eg-1CI" firstAttribute="top" secondItem="tQX-rv-hox" secondAttribute="bottom" constant="37" id="CVR-OW-gdo"/>
                             <constraint firstItem="JIh-Y1-O90" firstAttribute="top" secondItem="7iA-dH-Tgt" secondAttribute="top" id="HBz-fX-o44"/>
-                            <constraint firstItem="lHc-Vl-97L" firstAttribute="top" secondItem="tQX-rv-hox" secondAttribute="bottom" constant="31" id="OOM-V3-l2R"/>
+                            <constraint firstItem="hLL-Eg-1CI" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" id="Ish-U4-qjl"/>
                             <constraint firstItem="7iA-dH-Tgt" firstAttribute="bottom" secondItem="tQX-rv-hox" secondAttribute="bottom" constant="475" id="S7k-Gm-2VA"/>
-                            <constraint firstItem="5XL-Fg-hF8" firstAttribute="top" secondItem="lHc-Vl-97L" secondAttribute="bottom" constant="21" id="TjO-so-v6F"/>
-                            <constraint firstItem="5XL-Fg-hF8" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" id="XS8-U3-dFE"/>
+                            <constraint firstItem="5XL-Fg-hF8" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" constant="0.5" id="ga8-rQ-bld"/>
                             <constraint firstItem="tQX-rv-hox" firstAttribute="top" secondItem="ysQ-pQ-kZp" secondAttribute="bottom" constant="93" id="qSE-aJ-irU"/>
                             <constraint firstItem="tQX-rv-hox" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" id="ucg-Da-Jdy"/>
-                            <constraint firstItem="lHc-Vl-97L" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" id="vUG-CX-3rU"/>
+                            <constraint firstItem="5XL-Fg-hF8" firstAttribute="top" secondItem="hLL-Eg-1CI" secondAttribute="bottom" constant="29" id="vVk-dK-4b1"/>
                             <constraint firstItem="ysQ-pQ-kZp" firstAttribute="leading" secondItem="7iA-dH-Tgt" secondAttribute="leading" constant="92" id="wjZ-BX-i7M"/>
                             <constraint firstItem="7iA-dH-Tgt" firstAttribute="trailing" secondItem="JIh-Y1-O90" secondAttribute="trailing" constant="37" id="xXM-AJ-YiP"/>
                         </constraints>
@@ -462,6 +459,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="jcv-A2-yyt" id="3mc-SF-eXj"/>
                         <outlet property="passwordTxt" destination="0uA-87-M2r" id="78h-SE-FjN"/>
+                        <outlet property="userImage" destination="hLL-Eg-1CI" id="qMm-Oy-lWs"/>
                         <outlet property="usernameTxt" destination="ZoU-Yl-ddw" id="acw-Vv-Rlf"/>
                         <segue destination="mH6-CD-evb" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="aDP-j8-6xm"/>
                         <segue destination="rF9-KR-TPO" kind="show" identifier="toAvatarPicker" id="mjl-6F-Ok0"/>
@@ -567,7 +565,6 @@
     <resources>
         <image name="addChannelButton" width="22" height="22"/>
         <image name="closeButton" width="28" height="28"/>
-        <image name="dark1" width="100" height="100"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
