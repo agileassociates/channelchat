@@ -14,12 +14,15 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        
 
     }
     
@@ -28,6 +31,17 @@ class CreateAccountVC: UIViewController {
             userImage.image = UIImage(named: UserDataService.instance.avatarName)
             avatarName = UserDataService.instance.avatarName
         }
+    }
+    
+    func setup() {
+        spinner.isHidden = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
+        
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
@@ -40,6 +54,8 @@ class CreateAccountVC: UIViewController {
     
     
     @IBAction func createAcctBtnPressed(_ sender: Any) {
+        spinner.isHidden = false
+        spinner.startAnimating()
         
         guard let name = usernameTxt.text , usernameTxt.text != "" else { return }
         guard let email = emailTxt.text , emailTxt.text != "" else { return }
@@ -54,9 +70,12 @@ class CreateAccountVC: UIViewController {
                             AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion:
                                 { (success) in
                                     if success {
+                                        self.spinner.isHidden = true
+                                        self.spinner.stopAnimating()
                                         print("name: " + UserDataService.instance.name,
                                               "avatar_name: " + UserDataService.instance.avatarName)
                                         self.performSegue(withIdentifier: UNWIND, sender: nil)
+                                        NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGE, object: nil)
                                     }
                             })
                         }
