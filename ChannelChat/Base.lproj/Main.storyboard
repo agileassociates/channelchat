@@ -275,6 +275,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="vDd-OW-Cfm" eventType="touchUpInside" id="oQC-py-fje"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81N-op-UPW">
                                 <rect key="frame" x="347" y="44" width="28" height="28"/>
@@ -285,6 +288,10 @@
                                     <action selector="closePressed:" destination="vDd-OW-Cfm" eventType="touchUpInside" id="HHo-TG-cGU"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="im9-g3-AwX">
+                                <rect key="frame" x="188.5" y="329.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -293,15 +300,20 @@
                             <constraint firstItem="FL5-lK-os4" firstAttribute="top" secondItem="CkU-qe-hka" secondAttribute="top" constant="96" id="OqY-hx-lew"/>
                             <constraint firstItem="nyL-bE-xzD" firstAttribute="top" secondItem="XdB-gu-YJL" secondAttribute="bottom" constant="10" id="REs-gM-eBf"/>
                             <constraint firstItem="KBQ-mt-QcQ" firstAttribute="top" secondItem="CkU-qe-hka" secondAttribute="top" id="RgT-d1-t2J"/>
+                            <constraint firstItem="im9-g3-AwX" firstAttribute="centerY" secondItem="n1G-pp-pCp" secondAttribute="centerY" constant="-100" id="X1P-oo-NXA"/>
                             <constraint firstItem="hPg-sk-CK1" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="XaE-oS-xWA"/>
                             <constraint firstItem="FL5-lK-os4" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="aRz-ar-acL"/>
                             <constraint firstItem="XdB-gu-YJL" firstAttribute="top" secondItem="hPg-sk-CK1" secondAttribute="bottom" constant="60" id="dKd-8f-Pm5"/>
                             <constraint firstItem="hPg-sk-CK1" firstAttribute="top" secondItem="FL5-lK-os4" secondAttribute="bottom" constant="85" id="f97-Bh-6g2"/>
                             <constraint firstItem="nyL-bE-xzD" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="pSH-hF-OrB"/>
+                            <constraint firstItem="im9-g3-AwX" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="ulM-9e-tGS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CkU-qe-hka"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="bvW-1Q-rn7" id="hWY-W4-r8b"/>
+                        <outlet property="spinner" destination="im9-g3-AwX" id="9M7-zI-Kq7"/>
+                        <outlet property="userNameText" destination="LhA-rr-HYG" id="Hbb-zQ-PyA"/>
                         <segue destination="mMd-xG-OeH" kind="show" identifier="CreateAccountSegue" id="984-IW-3Ua"/>
                     </connections>
                 </viewController>

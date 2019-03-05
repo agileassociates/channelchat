@@ -133,7 +133,6 @@
 		F4A954512223A8010058240B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F4B76AC52221DF4C00EE5500 /* Constants.swift */,
 				F41D53FB22249757001090C4 /* UserDataService.swift */,
 				F4A954522223A8200058240B /* AuthService.swift */,
 			);
@@ -183,6 +182,7 @@
 		F4B76AC42221DF3A00EE5500 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F4B76AC52221DF4C00EE5500 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
