@@ -148,7 +148,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-Qa-r7z">
-                                <rect key="frame" x="169" y="791" width="76" height="51"/>
+                                <rect key="frame" x="169" y="791" width="161" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -172,12 +172,13 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="xTd-Qa-r7z" id="cIh-zT-L4H"/>
+                        <outlet property="profileImage" destination="gV0-0J-jwn" id="5iu-MR-wC4"/>
                         <segue destination="vDd-OW-Cfm" kind="show" identifier="LoginSegue" id="4g1-Lx-g2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nna-XF-D0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="-404"/>
+            <point key="canvasLocation" x="1028.985507246377" y="-404.46428571428572"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="x1t-TM-ZlW">
