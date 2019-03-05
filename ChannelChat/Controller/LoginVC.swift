@@ -10,10 +10,37 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var userNameText: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        spinner.isHidden = false
+        spinner.startAnimating()
+        
+        guard let email = userNameText.text, userNameText.text != "" else {return}
+        guard let password = passwordTxt.text, passwordTxt.text != "" else {return}
+        
+        AuthService.instance.loginUser(email: email, password: password) { (success) in
+            if success {
+                AuthService.instance.findUserByEmail(completion: {(success) in
+                    if success {
+                        NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGE, object: nil)
+                        self.spinner.isHidden = true
+                        self.spinner.stopAnimating()
+                        self.dismiss(animated: true, completion: nil)
+                        
+                    }
+                })
+            }
+        }
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func closePressed(_ sender: Any) {
@@ -23,14 +50,8 @@ class LoginVC: UIViewController {
     @IBAction func createAcctBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_CREATE, sender: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setupView() {
+        spinner.isHidden = true
     }
-    */
-
 }

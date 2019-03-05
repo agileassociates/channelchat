@@ -12,6 +12,8 @@
 		F41D53FC22249757001090C4 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D53FB22249757001090C4 /* UserDataService.swift */; };
 		F41D53FE2224B1A7001090C4 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D53FD2224B1A7001090C4 /* AvatarVC.swift */; };
 		F41D54002225CBD7001090C4 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D53FF2225CBD7001090C4 /* AvatarCell.swift */; };
+		F4223EB9222DE555000FC00A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4223EB7222DE555000FC00A /* ProfileVC.swift */; };
+		F4223EBA222DE555000FC00A /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4223EB8222DE555000FC00A /* ProfileVC.xib */; };
 		F49FFDD4221A6D9F0040BA9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FFDD3221A6D9F0040BA9A /* AppDelegate.swift */; };
 		F49FFDD9221A6D9F0040BA9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49FFDD7221A6D9F0040BA9A /* Main.storyboard */; };
 		F49FFDDB221A6DA00040BA9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49FFDDA221A6DA00040BA9A /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		F41D53FB22249757001090C4 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		F41D53FD2224B1A7001090C4 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
 		F41D53FF2225CBD7001090C4 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		F4223EB7222DE555000FC00A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		F4223EB8222DE555000FC00A /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		F49FFDD0221A6D9F0040BA9A /* ChannelChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChannelChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49FFDD3221A6D9F0040BA9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49FFDD8221A6D9F0040BA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F4A954512223A8010058240B /* Services */,
-				F4A954502223A7F90058240B /* New Group */,
+				F4A954502223A7F90058240B /* XIBs */,
 				F49FFDD2221A6D9F0040BA9A /* ChannelChat */,
 				F4B76AB1221A807800EE5500 /* Supporting Files */,
 				F49FFDD1221A6D9F0040BA9A /* Products */,
@@ -118,17 +122,17 @@
 			path = ChannelChat;
 			sourceTree = "<group>";
 		};
-		F4A954502223A7F90058240B /* New Group */ = {
+		F4A954502223A7F90058240B /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				F4223EB8222DE555000FC00A /* ProfileVC.xib */,
 			);
-			path = "New Group";
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 		F4A954512223A8010058240B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F4B76AC52221DF4C00EE5500 /* Constants.swift */,
 				F41D53FB22249757001090C4 /* UserDataService.swift */,
 				F4A954522223A8200058240B /* AuthService.swift */,
 			);
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B76ABE221A893100EE5500 /* ChatVC.swift */,
+				F4223EB7222DE555000FC00A /* ProfileVC.swift */,
 				F4B76AC0221A894A00EE5500 /* ChannelVC.swift */,
 				F4B76AC72221ED9400EE5500 /* LoginVC.swift */,
 				F4E8EAD72221F32400C33923 /* CreateAccountVC.swift */,
@@ -177,6 +182,7 @@
 		F4B76AC42221DF3A00EE5500 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F4B76AC52221DF4C00EE5500 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4223EBA222DE555000FC00A /* ProfileVC.xib in Resources */,
 				F49FFDDE221A6DA00040BA9A /* LaunchScreen.storyboard in Resources */,
 				F49FFDDB221A6DA00040BA9A /* Assets.xcassets in Resources */,
 				F49FFDD9221A6D9F0040BA9A /* Main.storyboard in Resources */,
@@ -302,6 +309,7 @@
 			files = (
 				F4B76AC1221A894A00EE5500 /* ChannelVC.swift in Sources */,
 				F41D53FE2224B1A7001090C4 /* AvatarVC.swift in Sources */,
+				F4223EB9222DE555000FC00A /* ProfileVC.swift in Sources */,
 				F416AD1F2223C51E00AA1899 /* RoundedButton.swift in Sources */,
 				F4B76ABF221A893100EE5500 /* ChatVC.swift in Sources */,
 				F4E8EAD82221F32400C33923 /* CreateAccountVC.swift in Sources */,

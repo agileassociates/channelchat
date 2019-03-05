@@ -148,7 +148,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-Qa-r7z">
-                                <rect key="frame" x="169" y="791" width="76" height="51"/>
+                                <rect key="frame" x="169" y="791" width="161" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -172,12 +172,13 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="xTd-Qa-r7z" id="cIh-zT-L4H"/>
+                        <outlet property="profileImage" destination="gV0-0J-jwn" id="5iu-MR-wC4"/>
                         <segue destination="vDd-OW-Cfm" kind="show" identifier="LoginSegue" id="4g1-Lx-g2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nna-XF-D0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="-404"/>
+            <point key="canvasLocation" x="1028.985507246377" y="-404.46428571428572"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="x1t-TM-ZlW">
@@ -274,6 +275,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="vDd-OW-Cfm" eventType="touchUpInside" id="oQC-py-fje"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81N-op-UPW">
                                 <rect key="frame" x="347" y="44" width="28" height="28"/>
@@ -284,6 +288,10 @@
                                     <action selector="closePressed:" destination="vDd-OW-Cfm" eventType="touchUpInside" id="HHo-TG-cGU"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="im9-g3-AwX">
+                                <rect key="frame" x="188.5" y="329.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -292,15 +300,20 @@
                             <constraint firstItem="FL5-lK-os4" firstAttribute="top" secondItem="CkU-qe-hka" secondAttribute="top" constant="96" id="OqY-hx-lew"/>
                             <constraint firstItem="nyL-bE-xzD" firstAttribute="top" secondItem="XdB-gu-YJL" secondAttribute="bottom" constant="10" id="REs-gM-eBf"/>
                             <constraint firstItem="KBQ-mt-QcQ" firstAttribute="top" secondItem="CkU-qe-hka" secondAttribute="top" id="RgT-d1-t2J"/>
+                            <constraint firstItem="im9-g3-AwX" firstAttribute="centerY" secondItem="n1G-pp-pCp" secondAttribute="centerY" constant="-100" id="X1P-oo-NXA"/>
                             <constraint firstItem="hPg-sk-CK1" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="XaE-oS-xWA"/>
                             <constraint firstItem="FL5-lK-os4" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="aRz-ar-acL"/>
                             <constraint firstItem="XdB-gu-YJL" firstAttribute="top" secondItem="hPg-sk-CK1" secondAttribute="bottom" constant="60" id="dKd-8f-Pm5"/>
                             <constraint firstItem="hPg-sk-CK1" firstAttribute="top" secondItem="FL5-lK-os4" secondAttribute="bottom" constant="85" id="f97-Bh-6g2"/>
                             <constraint firstItem="nyL-bE-xzD" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="pSH-hF-OrB"/>
+                            <constraint firstItem="im9-g3-AwX" firstAttribute="centerX" secondItem="n1G-pp-pCp" secondAttribute="centerX" id="ulM-9e-tGS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CkU-qe-hka"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="bvW-1Q-rn7" id="hWY-W4-r8b"/>
+                        <outlet property="spinner" destination="im9-g3-AwX" id="9M7-zI-Kq7"/>
+                        <outlet property="userNameText" destination="LhA-rr-HYG" id="Hbb-zQ-PyA"/>
                         <segue destination="mMd-xG-OeH" kind="show" identifier="CreateAccountSegue" id="984-IW-3Ua"/>
                     </connections>
                 </viewController>
@@ -424,6 +437,10 @@
                                     <constraint firstAttribute="width" constant="125" id="wrB-dk-SVs"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-0R-saz">
+                                <rect key="frame" x="188.5" y="329.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XL-Fg-hF8" customClass="RoundedButton" customModule="ChannelChat" customModuleProvider="target">
                                 <rect key="frame" x="139" y="578" width="137" height="27"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -443,9 +460,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xd0-0R-saz" firstAttribute="centerY" secondItem="3HB-5F-XnH" secondAttribute="centerY" constant="-100" id="Bu3-AS-Awp"/>
                             <constraint firstItem="hLL-Eg-1CI" firstAttribute="top" secondItem="tQX-rv-hox" secondAttribute="bottom" constant="37" id="CVR-OW-gdo"/>
                             <constraint firstItem="JIh-Y1-O90" firstAttribute="top" secondItem="7iA-dH-Tgt" secondAttribute="top" id="HBz-fX-o44"/>
                             <constraint firstItem="hLL-Eg-1CI" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" id="Ish-U4-qjl"/>
+                            <constraint firstItem="Xd0-0R-saz" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" id="LEd-7f-nYf"/>
                             <constraint firstItem="7iA-dH-Tgt" firstAttribute="bottom" secondItem="tQX-rv-hox" secondAttribute="bottom" constant="475" id="S7k-Gm-2VA"/>
                             <constraint firstItem="5XL-Fg-hF8" firstAttribute="centerX" secondItem="3HB-5F-XnH" secondAttribute="centerX" constant="0.5" id="ga8-rQ-bld"/>
                             <constraint firstItem="tQX-rv-hox" firstAttribute="top" secondItem="ysQ-pQ-kZp" secondAttribute="bottom" constant="93" id="qSE-aJ-irU"/>
@@ -459,6 +478,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="jcv-A2-yyt" id="3mc-SF-eXj"/>
                         <outlet property="passwordTxt" destination="0uA-87-M2r" id="78h-SE-FjN"/>
+                        <outlet property="spinner" destination="Xd0-0R-saz" id="jdg-sd-b7I"/>
                         <outlet property="userImage" destination="hLL-Eg-1CI" id="qMm-Oy-lWs"/>
                         <outlet property="usernameTxt" destination="ZoU-Yl-ddw" id="acw-Vv-Rlf"/>
                         <segue destination="mH6-CD-evb" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="aDP-j8-6xm"/>
