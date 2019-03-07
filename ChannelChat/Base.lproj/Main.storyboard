@@ -120,15 +120,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="85" id="vsE-MM-3rx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" rowHeight="85" id="vsE-MM-3rx" customClass="ChannelCell" customModule="ChannelChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vsE-MM-3rx" id="3oc-LH-Nqa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN5-TV-PgL">
-                                                    <rect key="frame" x="40" y="11" width="111" height="42"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN5-TV-PgL">
+                                                    <rect key="frame" x="65" y="11" width="176" height="42"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -136,10 +136,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QN5-TV-PgL" firstAttribute="centerY" secondItem="3oc-LH-Nqa" secondAttribute="centerY" constant="-10.5" id="6Pd-B6-mTm"/>
-                                                <constraint firstItem="QN5-TV-PgL" firstAttribute="leading" secondItem="3oc-LH-Nqa" secondAttribute="leadingMargin" constant="20" id="FfI-gd-wth"/>
+                                                <constraint firstItem="QN5-TV-PgL" firstAttribute="leading" secondItem="3oc-LH-Nqa" secondAttribute="leadingMargin" constant="45" id="FfI-gd-wth"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ChannelCell"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="QN5-TV-PgL" id="pKA-W5-3TZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -173,6 +177,7 @@
                     <connections>
                         <outlet property="loginBtn" destination="xTd-Qa-r7z" id="cIh-zT-L4H"/>
                         <outlet property="profileImage" destination="gV0-0J-jwn" id="5iu-MR-wC4"/>
+                        <outlet property="tableView" destination="lj2-r5-fyH" id="Vxu-tu-jFY"/>
                         <segue destination="vDd-OW-Cfm" kind="show" identifier="LoginSegue" id="4g1-Lx-g2W"/>
                     </connections>
                 </viewController>
