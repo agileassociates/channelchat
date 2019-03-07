@@ -8,17 +8,37 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
+class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 80
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIFY_USER_DATA_DID_CHANGE, object: nil)
-        MessageService()
         
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell", for: indexPath) as? ChannelCell {
+                let channel = MessageService.instance.channels[indexPath.row]
+                cell.configureCell(channel: channel)
+                return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +58,8 @@ class ChannelVC: UIViewController {
             profileImage.image = UIImage(named: "menuProfileIcon")
         }
     }
+    
+    
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
