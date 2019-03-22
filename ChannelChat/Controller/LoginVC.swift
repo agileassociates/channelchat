@@ -14,6 +14,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var userNameText: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -31,6 +33,8 @@ class LoginVC: UIViewController {
             if success {
                 AuthService.instance.findUserByEmail(completion: {(success) in
                     if success {
+                        
+                        
                         NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGE, object: nil)
                         self.spinner.isHidden = true
                         self.spinner.stopAnimating()
