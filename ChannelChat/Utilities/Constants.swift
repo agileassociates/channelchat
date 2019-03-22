@@ -45,3 +45,5 @@ let BEARER_HEADER = [
 // Notifications
 
 let NOTIFY_USER_DATA_DID_CHANGE = Notification.Name("notifyUserDataChanged")
+let NOTIFY_CHANNELS_LOADED = Notification.Name("notifyChannelsLoaded")
+let NOTIFY_CHANNEL_SELECTED = Notification.Name("notifyChannelSelected")
