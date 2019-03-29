@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		59C74723CF78181DB00BE982 /* Pods_ChannelChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4607D86782E0160702266531 /* Pods_ChannelChat.framework */; };
 		F41434D7224D92730012DF39 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41434D6224D92730012DF39 /* KeyboardBoundView.swift */; };
+		F41434D9224D9A970012DF39 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41434D8224D9A970012DF39 /* MessageCell.swift */; };
+		F41434DB224D9BCE0012DF39 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41434DA224D9BCD0012DF39 /* CircleImage.swift */; };
 		F4166528223DA2ED005CB072 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4166526223DA2ED005CB072 /* AddChannelVC.swift */; };
 		F4166529223DA2ED005CB072 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4166527223DA2ED005CB072 /* AddChannelVC.xib */; };
 		F416AD1F2223C51E00AA1899 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AD1E2223C51E00AA1899 /* RoundedButton.swift */; };
@@ -41,6 +43,8 @@
 		A8EBEC1B5B404884E21ED042 /* Pods-ChannelChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelChat/Pods-ChannelChat.release.xcconfig"; sourceTree = "<group>"; };
 		CC1D45DED879928EC3D86F7D /* Pods-ChannelChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelChat/Pods-ChannelChat.debug.xcconfig"; sourceTree = "<group>"; };
 		F41434D6224D92730012DF39 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		F41434D8224D9A970012DF39 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		F41434DA224D9BCD0012DF39 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		F4166526223DA2ED005CB072 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		F4166527223DA2ED005CB072 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		F416AD1E2223C51E00AA1899 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				F4B76AC2221A99DD00EE5500 /* GradientView.swift */,
+				F41434D8224D9A970012DF39 /* MessageCell.swift */,
+				F41434DA224D9BCD0012DF39 /* CircleImage.swift */,
 				F41434D6224D92730012DF39 /* KeyboardBoundView.swift */,
 				F416AD1E2223C51E00AA1899 /* RoundedButton.swift */,
 				F41D53FF2225CBD7001090C4 /* AvatarCell.swift */,
@@ -339,10 +345,12 @@
 				F416AD1F2223C51E00AA1899 /* RoundedButton.swift in Sources */,
 				F4B76ABF221A893100EE5500 /* ChatVC.swift in Sources */,
 				F4543727222E041D00A4E85B /* MessageService.swift in Sources */,
+				F41434DB224D9BCE0012DF39 /* CircleImage.swift in Sources */,
 				F4E8EAD82221F32400C33923 /* CreateAccountVC.swift in Sources */,
 				F4A954532223A8200058240B /* AuthService.swift in Sources */,
 				F4B76AC3221A99DD00EE5500 /* GradientView.swift in Sources */,
 				F49FFDD4221A6D9F0040BA9A /* AppDelegate.swift in Sources */,
+				F41434D9224D9A970012DF39 /* MessageCell.swift in Sources */,
 				F4B76ABA221A810800EE5500 /* SWRevealViewController.m in Sources */,
 				F4166528223DA2ED005CB072 /* AddChannelVC.swift in Sources */,
 				F454372B2231CC0800A4E85B /* ChannelCell.swift in Sources */,
