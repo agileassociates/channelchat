@@ -14,13 +14,16 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var channelLabel: UILabel!
     @IBOutlet weak var messageText: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    
+    var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bindToKeyboard()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        sendButton.isHidden = true 
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
         view.addGestureRecognizer(tap)
@@ -31,6 +34,16 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIFY_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIFY_CHANNEL_SELECTED, object: nil)
         
+        SocketService.instance.getChatMessage { (success) in
+            if success {
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                }
+            }
+        }
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail(completion: { (success) in
                 NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGE, object: nil)
@@ -38,11 +51,40 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        
+        if messageText.text == "" {
+            isTyping = false
+            sendButton.isHidden = true
+        } else {
+            if isTyping == false {
+                sendButton.isHidden = false
+            }
+            isTyping = true
+        }
+    }
+    
+    
+    @IBAction func sendMessagePressed(_ sender: Any) {
+            if AuthService.instance.isLoggedIn {
+                guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+                guard let message = messageText.text else { return }
+                
+                SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
+                    if success {
+                        self.messageText.text = ""
+                        self.messageText.resignFirstResponder()
+                    }
+                })
+            }
+    }
+    
     @objc func userDataDidChange(_ notif: Notification) {
         if AuthService.instance.isLoggedIn {
             onLoginGetMessages()
         } else {
             channelLabel.text = "Please Log In"
+            tableView.reloadData()
         }
     }
     
@@ -60,19 +102,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         getMessages()
     }
     
-    @IBAction func sendMsgPressed(_ sender: Any) {
-        if AuthService.instance.isLoggedIn {
-            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
-            guard let message = messageText.text else { return }
-            
-            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
-                if success {
-                    self.messageText.text = ""
-                    self.messageText.resignFirstResponder()
-                }
-            })
-        }
-    }
+    
     
     func onLoginGetMessages() {
         MessageService.instance.findAllChannel { (success) in
@@ -113,15 +143,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MessageService.instance.messages.count
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 }
