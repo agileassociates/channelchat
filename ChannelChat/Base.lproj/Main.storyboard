@@ -72,6 +72,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageBoxEditing:" destination="xSR-rY-tzi" eventType="editingChanged" id="b0U-6P-PMf"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2e-S2-eR2">
                                 <rect key="frame" x="374" y="827" width="30" height="30"/>
@@ -81,7 +84,7 @@
                                 </constraints>
                                 <state key="normal" image="send"/>
                                 <connections>
-                                    <action selector="sendMessagePressed:" destination="xSR-rY-tzi" eventType="touchUpInside" id="3ne-yp-ZIR"/>
+                                    <action selector="sendMessagePressed:" destination="xSR-rY-tzi" eventType="touchUpInside" id="ffK-mU-gBg"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JyN-IG-Gav">
@@ -165,6 +168,7 @@
                         <outlet property="channelLabel" destination="mUd-vl-Vj6" id="1Mp-pw-fzb"/>
                         <outlet property="menuBtn" destination="Kce-7d-0zC" id="1C4-KT-3sJ"/>
                         <outlet property="messageText" destination="MG2-II-I9L" id="6CL-yf-FwK"/>
+                        <outlet property="sendButton" destination="o2e-S2-eR2" id="zfq-Gd-jKJ"/>
                         <outlet property="tableView" destination="JyN-IG-Gav" id="zto-2O-9z2"/>
                     </connections>
                 </viewController>
